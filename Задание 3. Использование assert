@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+#include <cassert>
+
+using namespace std;
+
+float travelTime(float distance, float speed) {
+    assert(speed > 0.f && "Invalid Speed. Speed must be positive.\n");
+    assert(distance > 0.f && "Invalid distance. Distance must be positive.\n");
+    return distance / speed;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int distance, speed;
+    cout << "Enter distance(km): "; cin >> distance;
+    cout << "Enter speed(kn/h): "; cin >> speed;
+    cout << "Trevel time: " << travelTime(distance, speed) << "h.\n";
+}
