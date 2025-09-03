@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void bubbleSort(double numbers[], int size) {
+    bool swapped; 
+
+    for (int i = 0; i < size - 1; i++) {
+        swapped = false;
+
+        for (int j = 0; j < size - i - 1; j++) {
+            if (numbers[j] < numbers[j + 1]) {
+                double gapNum = numbers[j];
+                numbers[j] = numbers[j + 1];
+                numbers[j + 1] = gapNum;
+                swapped = true; 
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double numbers[15];
+    cout << "Input: ";
+
+    for (int i = 0; i < 15; i++) {
+        cin >> numbers[i];
+    }
+
+    bubbleSort(numbers, 15);
+    cout << "Output: ";
+
+    for (int i = 0; i < 15; i++) {
+        cout << numbers[i] << " ";
+    }
+
+    cout << endl;
+}
