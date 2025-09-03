@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    string lastNames[10];
+    for (int i = 0; i < 10; i++) {
+        cout << "<- ";
+        cin >> lastNames[i];
+    }
+    cout << "Enter enter 3 apartment numbers: ";
+    for (int i = 0; i < 3; i++) {
+        int numFlat;
+        cout << "-> ";
+        cin >> numFlat;
+        numFlat > 10 ? cout << "Invalid flat.\n" : cout << lastNames[numFlat - 1] << endl;;
+    }
+}
